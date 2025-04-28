@@ -4,7 +4,7 @@ use std::{net::Ipv4Addr, process::Command};
 pub fn run_game(path: String) -> bool {
     let mut is_running = check_if_running();
 
-    if is_running {
+    if !is_running {
         is_running = Command::new("sh")
             .current_dir(path)
             .args(["-C", "./run.sh", "-nogui"])
